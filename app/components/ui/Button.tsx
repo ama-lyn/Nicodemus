@@ -1,12 +1,7 @@
 
 import React from "react";
-import { Rowdies } from "next/font/google";
 import clsx from "clsx";
 
-const rowdies = Rowdies({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 type ButtonProps = {
   text: string;
@@ -26,7 +21,6 @@ const Button = ({
   return (
     <button
       className={clsx(
-        rowdies.className,
         color,
         fontSize,
         buttoncolor,
