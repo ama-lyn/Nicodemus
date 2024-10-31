@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Button from "./ui/Button";
-import Title from "./ui/Title";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 
@@ -13,7 +12,7 @@ const Navbar = () => {
     <section>
       
       <nav className="fixed top-0 w-full z-20 bg-background bg-opacity-90 bg-clip-padding blur-backdrop-filter">
-        <div className="flex flex-wrap justify-between items-center py-6 px-16 border-b-2 border-sky-500">
+        <div className="flex flex-wrap justify-between items-center py-5 px-[135px] border-b-2 border-gray">
             <div className="flex flex-row items-center gap-10">
             <Link href="/">
             <img src="/images/Logo.png" alt="Logo" />
@@ -38,7 +37,7 @@ const Navbar = () => {
             </div>
             <div className="hidden md:flex">
             <Button text="Get a quote" color="text-secondary" buttoncolor="bg-background" underline="underline  decoration-2 underline-offset-4"/>
-            <Button text="CONTACT" color="text-white" buttoncolor="bg-secondary"/>
+            <Button text="Contact" color="text-white" buttoncolor="bg-secondary"/>
             </div>
         
           {/* MOBILE... */}

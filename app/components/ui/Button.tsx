@@ -15,17 +15,15 @@ const Button = ({
   text,
   color,
   underline,
-  fontSize = "text-[12px]",
-  buttoncolor = "bg-button hover:bg-sky",
+  buttoncolor,
 }: ButtonProps) => {
   return (
     <button
       className={clsx(
         color,
-        fontSize,
         buttoncolor,
         underline,
-        "rounded-[24px]",
+        "rounded-[12px]",
         "border-[1.5px]",
         "border-background",
         "border-solid",
