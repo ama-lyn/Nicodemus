@@ -3,76 +3,50 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Button from "./ui/Button";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "./ui/navigation-menu";
-
-
+import Dropdown from "./ui/Dropdown";
 
 const Navbar = () => {
-    const [navbarOpen, setNavbarOpen] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <section>
-      
       <nav className="fixed top-0 w-full z-20 bg-background bg-opacity-90 bg-clip-padding blur-backdrop-filter">
         <div className="flex flex-wrap justify-between items-center py-5 px-[135px] border-b-2 border-gray">
-            <div className="flex flex-row items-center gap-10">
+          <div className="flex flex-row items-center gap-10">
             <Link href="/">
-            <img src="/images/Logo.png" alt="Logo" />
-          </Link>
-          <ul className="hidden md:flex gap-7 ">
-            <Link href="#home" className="  hover:text-secondary">
-              <li> Home </li>
+              <img src="/images/Logo.png" alt="Logo" />
             </Link>
+            <ul className="hidden md:flex">
+              <Link href="#home" className=" px-4 py-2 hover:text-secondary">
+                <li> Home </li>
+              </Link>
 
-            <Link href="#about" className="  hover:text-secondary">
-              <li>About </li>
-            </Link>
+              <Link href="#about" className=" px-4 py-2 hover:text-secondary">
+                <li>About </li>
+              </Link>
 
-            <Link href="#services" className="  hover:text-secondary">
-            <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="/personal-branding">
-                    Personal Branding
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="/copywriting">
-                    Copywriting
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="/seo">SEO</NavigationMenuLink>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-            </Link>
+              <Link href="#services" className="  hover:text-secondary">
+                <Dropdown/>
+              </Link>
 
-            <Link href="#portfolio" className="  hover:text-secondary">
-              <li> Portfolio</li>
-            </Link>
-          </ul>
-            </div>
-            <div className="hidden md:flex">
-            <Button text="Get a quote" color="text-secondary" buttoncolor="bg-background" underline="underline  decoration-2 underline-offset-4"/>
-            <Button text="Contact" color="text-white" buttoncolor="bg-secondary"/>
-            </div>
-        
+              <Link href="#portfolio" className="px-4 py-2  hover:text-secondary">
+                <li> Portfolio</li>
+              </Link>
+            </ul>
+          </div>
+          <div className="hidden md:flex">
+            <Button
+              text="Get a quote"
+              color="text-secondary"
+              buttoncolor="bg-background"
+              underline="underline  decoration-2 underline-offset-4"
+            />
+            <Button
+              text="Contact"
+              color="text-white"
+              buttoncolor="bg-secondary"
+            />
+          </div>
+
           {/* MOBILE... */}
           <div className="mobile-menu block md:hidden">
             {!navbarOpen ? (
@@ -95,8 +69,7 @@ const Navbar = () => {
 
         <div>
           {navbarOpen ? (
-           
-              <ul className="flex flex-col py-20 items-center font-semibold h-screen">
+            <ul className="flex flex-col py-20 items-center font-semibold h-screen">
               <Link href="#about">
                 <li
                   onClick={() => setNavbarOpen(false)}
@@ -133,26 +106,19 @@ const Navbar = () => {
                 </li>
               </Link>
 
-              
-
               <Link href="#contact">
-                <li
-                  onClick={() => setNavbarOpen(false)}
-                  className="pt-4"
-                >
-                  <Button text="CONTACT" color="text-secondary" buttoncolor="bg-background"/>
+                <li onClick={() => setNavbarOpen(false)} className="pt-4">
+                  <Button
+                    text="CONTACT"
+                    color="text-secondary"
+                    buttoncolor="bg-background"
+                  />
                 </li>
               </Link>
-
-              
             </ul>
-          
-            
           ) : null}
         </div>
-        
       </nav>
-    
     </section>
   );
 };

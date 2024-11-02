@@ -23,11 +23,13 @@ const Button = ({
         color,
         buttoncolor,
         underline,
-        "rounded-[12px]",
+        "rounded-md",
+        "text-[15px]",
         "border-[1.5px]",
         "border-background",
         "border-solid",
-        "p-2",
+        "px-2",
+        "py-1",
         "w-auto",
         "font-thin"
       )}
