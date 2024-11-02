@@ -3,6 +3,16 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Button from "./ui/Button";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "./ui/navigation-menu";
 
 
 
@@ -27,7 +37,30 @@ const Navbar = () => {
             </Link>
 
             <Link href="#services" className="  hover:text-secondary">
-              <li> Services </li>
+            <NavigationMenu>
+        <NavigationMenuList>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/personal-branding">
+                    Personal Branding
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/copywriting">
+                    Copywriting
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink href="/seo">SEO</NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
             </Link>
 
             <Link href="#portfolio" className="  hover:text-secondary">
